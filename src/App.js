@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { PDFViewer, PDFDownloadLink } from '@react-pdf/renderer';
+import TenantForm from './Components/TenantForm';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () => (
+  <div>
+    <div style={{ width: "700px", margin: "0px auto"}}>
+      <PDFViewer style={{
+            width: '700px',
+            height: '100vh',
+            margin: "0px auto"
+          }}>
+        <TenantForm />
+      </PDFViewer>
     </div>
-  );
-}
+  </div>
+);
 
-export default App;
+export default App
+
+ReactDOM.render(<App />, document.getElementById('root'));
